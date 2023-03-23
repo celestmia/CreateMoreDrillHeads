@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "AIA",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "create:andesite_casing"
+    },
+    "A": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "createmoredrillheads:diamond_drill"
+  }
+}

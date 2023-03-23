@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,waterlogged=false": {
+      "model": "createmoredrillheads:block/diamond_drill/block",
+      "x": 180
+    },
+    "facing=up,waterlogged=false": {
+      "model": "createmoredrillheads:block/diamond_drill/block"
+    },
+    "facing=north,waterlogged=false": {
+      "model": "createmoredrillheads:block/diamond_drill/block",
+      "x": 90
+    },
+    "facing=south,waterlogged=false": {
+      "model": "createmoredrillheads:block/diamond_drill/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "createmoredrillheads:block/diamond_drill/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,waterlogged=false": {
+      "model": "createmoredrillheads:block/diamond_drill/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,waterlogged=true": {
+      "model": "createmoredrillheads:block/diamond_drill/block",
+      "x": 180
+    },
+    "facing=up,waterlogged=true": {
+      "model": "createmoredrillheads:block/diamond_drill/block"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "createmoredrillheads:block/diamond_drill/block",
+      "x": 90
+    },
+    "facing=south,waterlogged=true": {
+      "model": "createmoredrillheads:block/diamond_drill/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,waterlogged=true": {
+      "model": "createmoredrillheads:block/diamond_drill/block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,waterlogged=true": {
+      "model": "createmoredrillheads:block/diamond_drill/block",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

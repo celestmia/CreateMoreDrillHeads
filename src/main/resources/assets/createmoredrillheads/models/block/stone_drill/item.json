@@ -1,0 +1,9 @@
+{
+  "parent": "createmoredrillheads:block/wooden_drill/item",
+  "textures": {
+    "2": "block/stone",
+    "7": "block/cobblestone",
+    "10": "block/cobblestone",
+    "particle": "block/cobblestone"
+  }
+}

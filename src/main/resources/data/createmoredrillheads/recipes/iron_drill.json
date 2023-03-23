@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    "III",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "create:andesite_casing"
+    },
+    "A": {
+      "tag": "minecraft:cobblestone"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "createmoredrillheads:iron_drill"
+  }
+}

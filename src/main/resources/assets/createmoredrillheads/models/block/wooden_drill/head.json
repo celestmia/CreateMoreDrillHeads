@@ -1,0 +1,9 @@
+{
+  "parent": "create:block/mechanical_drill/head",
+  "textures": {
+    "2": "block/oak_log",
+    "7": "block/oak_planks",
+    "10": "block/oak_planks",
+    "particle": "block/oak_planks"
+  }
+}

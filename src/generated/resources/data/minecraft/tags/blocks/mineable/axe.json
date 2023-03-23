@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "createmoredrillheads:wooden_drill",
+    "createmoredrillheads:stone_drill",
+    "createmoredrillheads:iron_drill",
+    "createmoredrillheads:gold_drill",
+    "createmoredrillheads:diamond_drill",
+    "createmoredrillheads:netherite_drill"
+  ]
+}
