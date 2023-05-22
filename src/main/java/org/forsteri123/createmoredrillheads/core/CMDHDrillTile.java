@@ -1,9 +1,6 @@
 package org.forsteri123.createmoredrillheads.core;
 
-import com.simibubi.create.content.contraptions.components.actors.BlockBreakingKineticTileEntity;
-import com.simibubi.create.content.contraptions.components.actors.DrillBlock;
-import com.simibubi.create.content.contraptions.components.actors.DrillTileEntity;
-import com.tterrag.registrate.util.entry.BlockEntry;
+import com.simibubi.create.content.kinetics.drill.DrillBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -11,7 +8,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class CMDHDrillTile extends DrillTileEntity {
+public class CMDHDrillTile extends DrillBlockEntity {
     public final int breakSpeedMultiplier;
     public final TagKey<Block> limit;
 

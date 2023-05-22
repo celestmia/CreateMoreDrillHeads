@@ -1,26 +1,21 @@
 package org.forsteri123.createmoredrillheads.core;
 
 import com.jozufozu.flywheel.core.PartialModel;
-import com.simibubi.create.content.contraptions.components.actors.DrillRenderer;
-import com.simibubi.create.foundation.block.BlockStressDefaults;
+import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MaterialColor;
-import org.forsteri123.createmoredrillheads.CreateMoreDrillHeads;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 import static com.simibubi.create.AllMovementBehaviours.movementBehaviour;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
@@ -51,11 +46,10 @@ public class CMDHDrillRegisterer {
                 .transform(customItemModel())
                 .register();
 
-        tile = REGISTRATE.tileEntity(
+        tile = REGISTRATE.blockEntity(
                         name, (BlockEntityType<CMDHDrillTile> type, BlockPos pos, BlockState state) -> new CMDHDrillTile(type, pos, state, breakSpeedMultiplier, limit))
                 .instance(() -> (m, tile) -> new CMDHDrillInstance(m, tile, head), false)
                 .validBlock(block)
-                .renderer(() -> DrillRenderer::new)
                 .register();
 
         tileMap.put(name, tile);

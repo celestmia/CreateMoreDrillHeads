@@ -2,7 +2,6 @@ package org.forsteri123.createmoredrillheads;
 
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
-import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,6 +35,9 @@ public class CreateMoreDrillHeads {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         // Register the processIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+
+        REGISTRATE.registerEventListeners(FMLJavaModLoadingContext.get()
+                .getModEventBus());
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -82,9 +84,8 @@ public class CreateMoreDrillHeads {
     }
 
     public static CreateRegistrate registrate() {
-        return REGISTRATE.get();
+        return REGISTRATE;
     }
 
-    @SuppressWarnings("removal")
-    public static final NonNullSupplier<CreateRegistrate> REGISTRATE = CreateRegistrate.lazy(CreateMoreDrillHeads.MOD_ID);
+    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(CreateMoreDrillHeads.MOD_ID);
 }

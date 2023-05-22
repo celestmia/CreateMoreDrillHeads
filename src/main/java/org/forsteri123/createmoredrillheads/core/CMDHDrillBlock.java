@@ -1,26 +1,14 @@
 package org.forsteri123.createmoredrillheads.core;
 
-import com.simibubi.create.content.contraptions.components.actors.DrillBlock;
-import com.simibubi.create.content.contraptions.components.actors.DrillTileEntity;
-import com.tterrag.registrate.util.entry.BlockEntityEntry;
-import net.minecraft.client.Minecraft;
+import com.simibubi.create.content.kinetics.drill.DrillBlock;
+import com.simibubi.create.content.kinetics.drill.DrillBlockEntity;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.ForgeRegistry;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Random;
-import java.util.function.Supplier;
 
 public class CMDHDrillBlock extends DrillBlock {
 
@@ -34,7 +22,7 @@ public class CMDHDrillBlock extends DrillBlock {
 
 
     @Override
-    public BlockEntityType<? extends DrillTileEntity> getTileEntityType() {
+    public BlockEntityType<? extends DrillBlockEntity> getBlockEntityType() {
         return CMDHDrillRegisterer.tileMap.get(name).get();
     }
 
@@ -45,7 +33,7 @@ public class CMDHDrillBlock extends DrillBlock {
         if (!new AABB(pos).deflate(.1f)
                 .intersects(entityIn.getBoundingBox()))
             return;
-        withTileEntityDo(worldIn, pos, te -> {
+        withBlockEntityDo(worldIn, pos, te -> {
             if (te.getSpeed() == 0)
                 return;
             entityIn.hurt(damageSourceDrill, (float) getDamage(te.getSpeed()) / 6 * breakSpeedMultiplier);
