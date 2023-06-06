@@ -1,22 +1,19 @@
 package org.forsteri123.createmoredrillheads.core;
 
-import com.jozufozu.flywheel.core.PartialModel;
 import com.simibubi.create.foundation.data.CreateRegistrate;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import org.forsteri123.createmoredrillheads.CreateMoreDrillHeads;
 import org.jetbrains.annotations.NotNull;
 
-import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
-
+@SuppressWarnings("unused")
 public class Registration {
 
     public static final CreativeModeTab CREATIVE_MODE_TAB = new CreativeModeTab("createmoredrillheads") {
         @Override
         public @NotNull ItemStack makeIcon() {
-            return new ItemStack(Registration.WOODEN_DRILL.block.get());
+            return new ItemStack(Registration.DIAMOND_DRILL.block.get());
         }
     };
 
@@ -48,8 +45,4 @@ public class Registration {
     );
 
     public static void register() {}
-
-    protected static PartialModel blockPartial(String path) {
-        return new PartialModel(new ResourceLocation(CreateMoreDrillHeads.MOD_ID, ("block/" + path)));
-    }
 }

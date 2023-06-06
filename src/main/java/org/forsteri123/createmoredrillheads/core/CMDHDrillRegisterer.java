@@ -20,8 +20,8 @@ import java.util.Map;
 import static com.simibubi.create.AllMovementBehaviours.movementBehaviour;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
+import static org.forsteri123.createmoredrillheads.core.CMDHPartials.blockPartial;
 import static org.forsteri123.createmoredrillheads.core.Registration.REGISTRATE;
-import static org.forsteri123.createmoredrillheads.core.Registration.blockPartial;
 
 public class CMDHDrillRegisterer {
     public final PartialModel head;
@@ -46,6 +46,7 @@ public class CMDHDrillRegisterer {
                 .transform(customItemModel())
                 .register();
 
+        //noinspection unchecked
         tile = REGISTRATE.blockEntity(
                         name, (BlockEntityType<CMDHDrillTile> type, BlockPos pos, BlockState state) -> new CMDHDrillTile(type, pos, state, breakSpeedMultiplier, limit))
                 .instance(() -> (m, tile) -> new CMDHDrillInstance(m, tile, head), false)
