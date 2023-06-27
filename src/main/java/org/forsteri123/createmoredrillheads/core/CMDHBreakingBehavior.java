@@ -20,7 +20,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
@@ -108,7 +107,6 @@ public class CMDHBreakingBehavior extends BlockBreakingMovementBehaviour {
 
         if (!canBreak(world, breakingPos, stateToBreak)) {
             if (destroyProgress != 0) {
-                destroyProgress = 0;
                 data.remove("Progress");
                 data.remove("TicksUntilNextProgress");
                 data.remove("BreakingPos");
@@ -139,7 +137,6 @@ public class CMDHBreakingBehavior extends BlockBreakingMovementBehaviour {
             if (shouldDestroyStartBlock(stateToBreak))
                 BlockHelper.destroyBlock(context.world, breakingPos, 1f, stack -> this.dropItem(context, stack));
             onBlockBroken(context, ogPos, stateToBreak);
-            ticksUntilNextProgress = -1;
             data.remove("Progress");
             data.remove("TicksUntilNextProgress");
             data.remove("BreakingPos");
@@ -147,7 +144,7 @@ public class CMDHBreakingBehavior extends BlockBreakingMovementBehaviour {
         }
 
         ticksUntilNextProgress = (int) (blockHardness / breakSpeed);
-        world.destroyBlockProgress(id, breakingPos, (int) destroyProgress);
+        world.destroyBlockProgress(id, breakingPos, destroyProgress);
         data.putInt("TicksUntilNextProgress", ticksUntilNextProgress);
         data.putInt("Progress", destroyProgress);
     }
@@ -191,8 +188,7 @@ public class CMDHBreakingBehavior extends BlockBreakingMovementBehaviour {
     @Override
     public boolean canBreak(Level world, BlockPos breakingPos, BlockState state) {
         return super.canBreak(world, breakingPos, state) && !state.getCollisionShape(world, breakingPos)
-                .isEmpty() && !AllBlocks.TRACK.has(state) && state.getTags()
-                .anyMatch((tag) -> tag.equals(BlockTags.MINEABLE_WITH_PICKAXE))
+                .isEmpty() && !AllBlocks.TRACK.has(state)
                 && (limit == null || MiningLevelUtil.get(state, limit));
     }
 }

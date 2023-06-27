@@ -2,7 +2,6 @@ package org.forsteri123.createmoredrillheads.core;
 
 import com.simibubi.create.content.kinetics.drill.DrillBlockEntity;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -26,8 +25,6 @@ public class CMDHDrillTile extends DrillBlockEntity {
     public boolean canBreak(BlockState stateToBreak, float blockHardness) {
         return
                 isBreakable(stateToBreak, blockHardness)
-                        && stateToBreak.getTags()
-                                .anyMatch((tag) -> tag.equals(BlockTags.MINEABLE_WITH_PICKAXE))
                         && (limit == null || MiningLevelUtil.get(stateToBreak, limit))
                 ;
     }
