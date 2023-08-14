@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "AIA",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "create:andesite_casing"
+    },
+    "A": {
+      "tag": "forge:ingots/gold"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "createmoredrillheads:golden_drill"
+  }
+}

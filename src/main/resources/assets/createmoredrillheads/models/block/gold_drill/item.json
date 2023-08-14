@@ -1,9 +1,0 @@
-{
-  "parent": "createmoredrillheads:block/wooden_drill/item",
-  "textures": {
-    "2": "block/gold_block",
-    "7": "block/gold_block",
-    "10": "block/gold_block",
-    "particle": "block/gold_block"
-  }
-}

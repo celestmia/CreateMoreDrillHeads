@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "item": "createmoredrillheads:golden_drill"
+    },
+    {
+      "tag": "forge:dusts/quartz"
+    }
+  ],
+  "results": [
+    {
+      "item": "createmoredrillheads:quartz_dusts_tipped_golden_drill"
+    }
+  ]
+}

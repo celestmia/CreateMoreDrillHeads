@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "item": "createmoredrillheads:netherite_drill"
+    },
+    {
+      "tag": "forge:dusts/amethyst"
+    }
+  ],
+  "results": [
+    {
+      "item": "createmoredrillheads:amethyst_dusts_tipped_netherite_drill"
+    }
+  ]
+}

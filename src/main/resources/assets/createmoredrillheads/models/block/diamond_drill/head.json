@@ -1,9 +1,0 @@
-{
-  "parent": "create:block/mechanical_drill/head",
-  "textures": {
-    "2": "block/diamond_block",
-    "7": "block/diamond_block",
-    "10": "block/diamond_block",
-    "particle": "block/diamond_block"
-  }
-}

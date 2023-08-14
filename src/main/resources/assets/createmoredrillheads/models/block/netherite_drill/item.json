@@ -1,9 +1,0 @@
-{
-  "parent": "createmoredrillheads:block/wooden_drill/item",
-  "textures": {
-    "2": "block/netherite_block",
-    "7": "block/netherite_block",
-    "10": "block/netherite_block",
-    "particle": "block/netherite_block"
-  }
-}

@@ -1,3 +1,8 @@
 {
-  "parent": "createmoredrillheads:block/stone_drill/item"
+  "parent": "createmoredrillheads:block/abstract/abstract_tiered_drill_item",
+  "textures": {
+    "2": "minecraft:block/stone",
+    "7": "minecraft:block/cobblestone",
+    "10": "minecraft:block/cobblestone"
+  }
 }
