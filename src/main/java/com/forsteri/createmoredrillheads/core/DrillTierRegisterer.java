@@ -4,6 +4,7 @@ import com.forsteri.createmoredrillheads.entry.TieredDrillRegistration;
 import com.jozufozu.flywheel.core.PartialModel;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,14 +42,14 @@ public class DrillTierRegisterer {
                         ).findFirst();
 
         if (registerer.isEmpty())
-            throw new IllegalStateException("No drill tier registerer found for block " + state.getBlock().getRegistryName());
+            throw new IllegalStateException("No drill tier registerer found for block " + ForgeRegistries.BLOCKS.getKey(state.getBlock()));
 
         Optional<TippedDrillRegisterer> tippedDrillRegisterer = registerer.get().DRILLS.values().stream()
                 .filter(drillRegisterer -> drillRegisterer.getBlock().get().equals(state.getBlock()))
                 .findFirst();
 
         if (tippedDrillRegisterer.isEmpty())
-            throw new IllegalStateException("No tipped drill registerer found for block " + state.getBlock().getRegistryName());
+            throw new IllegalStateException("No tipped drill registerer found for block " + ForgeRegistries.BLOCKS.getKey(state.getBlock()));
 
         return tippedDrillRegisterer.get().getHead();
     }
