@@ -8,7 +8,7 @@ import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.foundation.data.recipe.ProcessingRecipeGen;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Tiers;
 
@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.function.UnaryOperator;
 
 public class DrillTipApplicationRecipeProvider extends ProcessingRecipeGen {
-    public DrillTipApplicationRecipeProvider(DataGenerator p_125973_) {
+    public DrillTipApplicationRecipeProvider(PackOutput p_125973_) {
         super(p_125973_);
     }
 

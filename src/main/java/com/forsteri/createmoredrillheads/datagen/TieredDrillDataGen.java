@@ -12,6 +12,6 @@ public class TieredDrillDataGen {
     public static void gatherData(GatherDataEvent event){
         DataGenerator generator = event.getGenerator();
 
-        generator.addProvider(true, new DrillTipApplicationRecipeProvider(generator));
+        generator.addProvider(true, new DrillTipApplicationRecipeProvider(event.getGenerator().getPackOutput()));
     }
 }

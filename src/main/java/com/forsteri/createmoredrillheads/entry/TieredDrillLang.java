@@ -4,7 +4,7 @@ import static com.forsteri.createmoredrillheads.CreateMoreDrillHeads.registrate;
 
 public class TieredDrillLang {
     static {
-        registrate().addRawLang("itemGroup.createmoredrillheads", "Create: More Drill Heads");
+        registrate().addRawLang("itemGroup.more_drill_heads", "Create: More Drill Heads");
     }
 
     public static void register() {}

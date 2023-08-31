@@ -2,6 +2,7 @@ package com.forsteri.createmoredrillheads;
 
 import com.forsteri.createmoredrillheads.entry.TieredDrillLang;
 import com.forsteri.createmoredrillheads.entry.TieredDrillRegistration;
+import com.forsteri.createmoredrillheads.entry.TieredDrillTab;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -20,7 +21,7 @@ public class CreateMoreDrillHeads {
 
         REGISTRATE.registerEventListeners(modEventBus);
 
-        // Register ourselves for server and other game events we are interested in
+        TieredDrillTab.register(modEventBus);
         TieredDrillRegistration.register();
         TieredDrillLang.register();
     }

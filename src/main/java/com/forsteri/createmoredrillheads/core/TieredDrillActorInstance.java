@@ -3,7 +3,6 @@ package com.forsteri.createmoredrillheads.core;
 import com.jozufozu.flywheel.api.Material;
 import com.jozufozu.flywheel.api.MaterialManager;
 import com.jozufozu.flywheel.core.virtual.VirtualRenderWorld;
-import com.mojang.math.Quaternion;
 import com.simibubi.create.content.contraptions.actors.flwdata.ActorData;
 import com.simibubi.create.content.contraptions.behaviour.MovementContext;
 import com.simibubi.create.content.contraptions.render.ActorInstance;
@@ -12,7 +11,9 @@ import com.simibubi.create.foundation.render.AllMaterialSpecs;
 import com.simibubi.create.foundation.utility.AngleHelper;
 import com.simibubi.create.foundation.utility.VecHelper;
 import net.minecraft.core.Direction;
+import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.state.BlockState;
+import org.joml.Quaternionf;
 
 public class TieredDrillActorInstance extends ActorInstance {
 
@@ -44,7 +45,7 @@ public class TieredDrillActorInstance extends ActorInstance {
                 .setBlockLight(localBlockLight())
                 .setRotationOffset(0)
                 .setRotationAxis(0, 0, 1)
-                .setLocalRotation(new Quaternion(eulerX, eulerY, 0, true))
+                .setLocalRotation(new Quaternionf().rotationXYZ(eulerX * Mth.DEG_TO_RAD, eulerY * Mth.DEG_TO_RAD, 0))
                 .setSpeed(getSpeed(facing));
     }
 

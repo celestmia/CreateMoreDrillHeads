@@ -16,5 +16,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "createmoredrillheads:blocks/redstone_dusts_tipped_wooden_drill"
 }

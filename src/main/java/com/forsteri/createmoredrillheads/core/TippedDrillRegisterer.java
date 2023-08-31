@@ -13,7 +13,7 @@ import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.client.model.generators.ModelBuilder;
 
 import static com.forsteri.createmoredrillheads.entry.TieredDrillRegistration.REGISTRATE;
@@ -45,7 +45,7 @@ public class TippedDrillRegisterer {
         block = REGISTRATE.block(name, (BlockBehaviour.Properties properties) ->
                         new TieredDrillBlock(properties, tier, name, this::getTile))
                 .initialProperties(SharedProperties::stone)
-                .properties(p -> p.color(MaterialColor.PODZOL))
+                .properties(p -> p.mapColor(MapColor.PODZOL))
                 .transform(axeOrPickaxe())
                 .blockstate(
                         (c, p) -> p.directionalBlock(c.get(), $ -> p.models()
