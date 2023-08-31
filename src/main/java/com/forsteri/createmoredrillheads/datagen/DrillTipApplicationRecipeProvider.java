@@ -22,7 +22,7 @@ public class DrillTipApplicationRecipeProvider extends ProcessingRecipeGen {
 
     @Override
     protected AllRecipeTypes getRecipeType() {
-        return AllRecipeTypes.ITEM_APPLICATION;
+        return AllRecipeTypes.DEPLOYING;
     }
 
     {
