@@ -1,8 +1,8 @@
 package com.forsteri.createmoredrillheads.core;
 
-import com.simibubi.create.AllDamageTypes;
 import com.simibubi.create.content.kinetics.drill.DrillBlock;
 import com.simibubi.create.content.kinetics.drill.DrillBlockEntity;
+import com.simibubi.create.foundation.damageTypes.CreateDamageSources;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
@@ -44,7 +44,7 @@ public class TieredDrillBlock extends DrillBlock {
         withBlockEntityDo(worldIn, pos, te -> {
             if (te.getSpeed() == 0)
                 return;
-            entityIn.hurt(AllDamageTypes.DRILL.source(worldIn), (float) getDamage(te.getSpeed()) / 6 * tier.getSpeed());
+            entityIn.hurt(CreateDamageSources.drill(worldIn), (float) getDamage(te.getSpeed()) / 6 * tier.getSpeed());
         });
     }
 

@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class TieredDrillRegistration {
     public static final CreateRegistrate REGISTRATE = CreateMoreDrillHeads.registrate()
-            .useCreativeTab(TieredDrillTab.TAB);
+            .setCreativeTab(TieredDrillTab.TAB);
 
     public static final Map<Tier, DrillTierRegisterer> DRILLS = new HashMap<>();
 
