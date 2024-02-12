@@ -74,8 +74,10 @@ public class TippedDrillRegisterer {
                 .register();
 
         var unregistered = REGISTRATE.blockEntity(
-                        name, (BlockEntityType<TieredDrillBlockEntity> type, BlockPos pos, BlockState state) -> new TieredDrillBlockEntity(type, pos, state, tier, tip))
-                .instance(() -> (m, tile) -> new TieredDrillInstance(m, tile, head), false);
+                        name, (BlockEntityType<TieredDrillBlockEntity> type, BlockPos pos, BlockState state) ->
+                                new TieredDrillBlockEntity(type, pos, state, tier, tip))
+                .instance(() -> (m, tile) -> new TieredDrillInstance(m, tile, head), false)
+                .validBlock(block);
 
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> RendererLoader.addRenderer(unregistered, head));
 
