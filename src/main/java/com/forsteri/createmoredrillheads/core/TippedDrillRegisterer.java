@@ -14,7 +14,9 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.model.generators.ModelBuilder;
+import net.minecraftforge.fml.DistExecutor;
 
 import static com.forsteri.createmoredrillheads.entry.TieredDrillRegistration.REGISTRATE;
 import static com.simibubi.create.AllMovementBehaviours.movementBehaviour;
@@ -71,12 +73,14 @@ public class TippedDrillRegisterer {
                 .build()
                 .register();
 
-        tile = REGISTRATE.blockEntity(
+        var unregistered = REGISTRATE.blockEntity(
                         name, (BlockEntityType<TieredDrillBlockEntity> type, BlockPos pos, BlockState state) -> new TieredDrillBlockEntity(type, pos, state, tier, tip))
                 .instance(() -> (m, tile) -> new TieredDrillInstance(m, tile, head), false)
-                .renderer(() -> context -> new TieredDrillRenderer(context, head))
-                .validBlock(block)
-                .register();
+                .validBlock(block);
+
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> RendererLoader.addRenderer(unregistered, head));
+
+        tile = unregistered.register();
     }
 
     private <U extends ModelBuilder<U>> void buildModel(U builder, Tiers tier, DrillTips tip) {
