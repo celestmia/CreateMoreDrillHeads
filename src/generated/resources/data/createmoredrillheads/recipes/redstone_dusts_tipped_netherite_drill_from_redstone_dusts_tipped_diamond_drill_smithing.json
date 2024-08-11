@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "base": {
+    "item": "createmoredrillheads:redstone_dusts_tipped_diamond_drill"
+  },
+  "result": {
+    "item": "createmoredrillheads:redstone_dusts_tipped_netherite_drill"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}
